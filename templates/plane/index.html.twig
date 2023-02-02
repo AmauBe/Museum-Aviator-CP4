@@ -8,6 +8,7 @@
 		<img class="imagePageList" src="{{ asset('build/images/ailes2.jpg') }}" alt=""/>
 		<h1 class="mt-4 ">Index des Avions</h1>
 	</div>
+
 	<div class=" container col-12 mt-5 py-1 colspan-4">
 		<table class="table  mt-5">
 			<thead class="collspan-2">
@@ -23,17 +24,22 @@
 						<td>{{ plane.model }}</td>
 						<td>{{ plane.constructor }}</td>
 						<td>{{ plane.year }}</td>
-						<td class="d-flex justify-content-start">
-							<a href="{{ path('app_plane_show', {'id': plane.id}) }}"><img class="cleModif" src="{{ asset('build/images/plane.png') }}" alt=""/></a>
-							<a href="{{ path('app_plane_edit', {'id': plane.id}) }}"><img class="cleModif" src="{{ asset('build/images/clé.png') }}" alt=""/></a>
+						<td>
+							<div class="d-flex justify-content-start">
+								<a href="{{ path('app_plane_show', {'id': plane.id}) }}"><img class="cleModif" src="{{ asset('build/images/plane.png') }}" alt=""/></a>
+								<a href="{{ path('app_plane_edit', {'id': plane.id}) }}"><img class="cleModif" src="{{ asset('build/images/clé.png') }}" alt=""/></a>
+							</div>
 						</td>
 					</tr>
-				</td>
+				{% else %}
+					<tr>
+						<td colspan="5">no records found</td>
+					</tr>
+				{% endfor %}
 			</tbody>
-		</tr>
-	{% else %}
-		<tr>
-			<td colspan="5">no records found</td>
-		</tr>
-	{% endfor %}
-</tbody></table></div><div class="d-flex justify-content-center"><a class="btn d-flex justify-content-center mt-2 mb-4" href="{{ path('app_plane_new') }}">Create new</a></div>{% endblock %}
+		</table>
+	</div>
+	<div class="d-flex justify-content-center">
+		<a class="btn d-flex justify-content-center mt-2 mb-4" href="{{ path('app_plane_new') }}">Create new</a>
+	</div>
+{% endblock %}

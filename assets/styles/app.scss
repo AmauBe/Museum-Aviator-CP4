@@ -11,7 +11,10 @@ h1 {
 
 table {
     width: 75%;
+}
 
+.h1Edit {
+    margin-bottom: 50px;
 }
 
 .btn {
@@ -85,6 +88,11 @@ table {
 }
 
 .cleModif {
-    width: 30px;
-    height: 30px;
+    width: 23px;
+    height: 22px;
+}
+
+.btnDelete {
+    display: flex;
+    align-items: center;
 }

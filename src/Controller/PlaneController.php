@@ -43,6 +43,7 @@ class PlaneController extends AbstractController
     #[Route('/show/{id<^[0-9]+$>s}', name: 'app_plane_show', methods: ['GET'])]
     public function show(Plane $plane): Response
     {
+        
         return $this->render('plane/show.html.twig', [
             'plane' => $plane,
         ]);

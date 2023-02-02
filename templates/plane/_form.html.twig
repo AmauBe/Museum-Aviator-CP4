@@ -1,4 +1,8 @@
 {{ form_start(form) }}
+{{ form_row(form.model, {'attr': {'class': 'd-flex flex-column mb-3'}}) }}
+{{ form_row(form.constructor, {'attr': {'class': 'd-flex flex-column mb-3'}}) }}
+{{ form_row(form.year, {'attr': {'class': 'd-flex flex-column mb-3'}}) }}
+{{ form_row(form.category, {'attr': {'class': 'd-flex flex-column mb-3'}}) }}
 {{ form_widget(form) }}
 <div class="d-flex justify-content-center align-items-center my-3">
 	<button class="btn">{{ button_label|default('Save') }}</button>
