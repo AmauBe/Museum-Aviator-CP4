@@ -16,6 +16,8 @@ class PlaneController extends AbstractController
     #[Route('/', name: 'app_plane_index', methods: ['GET'])]
     public function index(PlaneRepository $planeRepository): Response
     {
+        $planes = $planeRepository->findAll();
+
         return $this->render('plane/index.html.twig', [
             'planes' => $planeRepository->findAll(),
         ]);
@@ -40,7 +42,7 @@ class PlaneController extends AbstractController
         ]);
     }
 
-    #[Route('/show/{id<^[0-9]+$>s}', name: 'app_plane_show', methods: ['GET'])]
+    #[Route('/show}', name: 'app_plane_show', methods: ['GET'])]
     public function show(Plane $plane): Response
     {
         

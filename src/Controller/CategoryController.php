@@ -44,21 +44,14 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_category_show', methods: ['GET'])]
-    public function show(string $categoryName, CategoryRepository $categoryRepository, PlaneRepository $PlaneRepository): Response
+    public function show(int $id,
+     CategoryRepository $categoryRepository,
+    ): Response
     {
-        $category = $categoryRepository->findOneBy(['name' => $categoryName]);
-
-        $planes = $planeRepository->findPlanesByCategory(['categoryName' => $categoryName]);
-
-        if (!$category) {
-            throw $this->createNotFoundException(
-                'No category with name : ' . $categoryName . ' found in categories\'s table.'
-            );
-        }
+        $category = $categoryRepository->findOneById($id);
 
         return $this->render('category/show.html.twig', [
             'category' => $category,
-            'planes' => $planes,
          ]);
     }
 
