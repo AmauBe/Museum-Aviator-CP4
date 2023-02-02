@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Plane{% endblock %}
+{% block title %}New Plane
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Plane</h1>
+	<h1>Create new Plane</h1>
 
-    {{ include('plane/_form.html.twig') }}
-
-    <a href="{{ path('app_plane_index') }}">back to list</a>
+	<div class="d-flex justify-content-center">
+		{{ include('plane/_form.html.twig') }}>
+	</div>
+	<div class="d-flex justify-content-center">
+		<a lass="btn bg-dark text-white mb-2" href="{{ path('app_plane_index') }}">Back to list</a>
+	</div>
 {% endblock %}

@@ -1,35 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}Category index
+{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for category in categories %}
-            <tr>
-                <td>{{ category.id }}</td>
-                <td>{{ category.name }}</td>
-                <td>
-                    <a href="{{ path('app_category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('app_category_edit', {'id': category.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_category_new') }}">Create new</a>
+	<div class="PlaneImageCatIndex">
+		<img class="PlaneImageCatIndex" src="{{ asset('build/images/fileavionaligne.jpg') }}" alt=""/>
+		<h1 class="mt-4 ">Category index</h1>
+	</div>
+	<div class="container col-12 mt-5 py-1 colspan-4">
+		<table class="table mt-5 decoration-none">
+			<tbody>
+				{% for category in categories %}
+					<tr>
+						<td class="d-flex justify-content-center" colspan="2">{{ category.name }}</td>
+						<td colspan="1">
+							<a href="{{ path('app_category_show', {'id': category.id}) }}">show</a>
+							<a href="{{ path('app_category_edit', {'id': category.id}) }}">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="2">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<a class="btn" href="{{ path('app_category_new') }}">Create new</a>
+	</div>
 {% endblock %}
