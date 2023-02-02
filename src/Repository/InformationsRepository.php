@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Information;
+use App\Entity\Informations;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Information>
+ * @extends ServiceEntityRepository<Informations>
  *
- * @method Information|null find($id, $lockMode = null, $lockVersion = null)
- * @method Information|null findOneBy(array $criteria, array $orderBy = null)
- * @method Information[]    findAll()
- * @method Information[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Informations|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Informations|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Informations[]    findAll()
+ * @method Informations[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class InformationRepository extends ServiceEntityRepository
+class InformationsRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Information::class);
+        parent::__construct($registry, Informations::class);
     }
 
-    public function save(Information $entity, bool $flush = false): void
+    public function save(Informations $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class InformationRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Information $entity, bool $flush = false): void
+    public function remove(Informations $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class InformationRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Information[] Returns an array of Information objects
+//     * @return Informations[] Returns an array of Informations objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class InformationRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Information
+//    public function findOneBySomeField($value): ?Informations
 //    {
 //        return $this->createQueryBuilder('i')
 //            ->andWhere('i.exampleField = :val')
