@@ -1,18 +1,17 @@
-<nav class="navbar navbar-expand-lg">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="{{path('app_home')}}">
-			<img src="{{ asset('build/images/Museum-Aviator.png') }}">
+<nav class="navbar navbar-expand-lg  tetx-white">
+	<div class="container-fluid col-2 ms-5">
+		<a
+			class="navbar-brand" href="{{path('app_home')}}">
+			{#<div id="logoNavbar"></div>#}
+			<img class="logoImageNav" src="{{ asset('build/images/Museum-Aviator.jpeg') }}" alt=""/>
 		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse text-white" id="navbarNavAltMarkup">
-			<div class="navbar-nav text-white">
-				<a class="nav-link active" aria-current="page" href="#"></a>
-				<a class="nav-link" href="{{path('app_category_index')}}">Listing par Catégorie</a>
-				<a class="nav-link" href="{{path('app_plane_index')}}">Tous les avions</a>
-				<a class="nav-link">Historique</a>
-			</div>
+	</div>
+	<div class="collapse navbar-collapse my-5 d-flex justify-content-center">
+		<div class="navbar-nav text-white d-flex">
+			<a class="navlink active d-flex" aria-current="page" href="#"></a>
+			<a class="navlink text-white d-flex justify-content-around mx-5 text-decoration-none" href="{{path('app_category_index')}}">Catégorie</a>
+			<a class="navlink text-white d-flex justify-content-around mx-5 text-decoration-none" href="{{path('app_plane_index')}}">Tous les avions</a>
+			<a class="navlink text-white d-flex justify-content-around mx-5 text-decoration-none">Historique</a>
 		</div>
 	</div>
-</nav>
+</div></nav>

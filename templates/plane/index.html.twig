@@ -1,39 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Plane index{% endblock %}
+{% block title %}Plane index
+{% endblock %}
 
 {% block body %}
-    <h1>Plane index</h1>
+	<div class="imagePageList">
+		<img class="imagePageList" src="{{ asset('build/images/ailes2.jpg') }}" alt=""/>
+		<h1 class="mt-4 ">Index des Avions</h1>
+	</div>
+	<div class=" container col-12 mt-5 py-1 colspan-4">
+		<table class="table  mt-5">
+			<thead class="collspan-2">
+				<tr>
+					<th>Modele</th>
+					<th>Constructeur</th>
+					<th>Année</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for plane in planes %}
+					<tr>
+						<td>{{ plane.model }}</td>
+						<td>{{ plane.constructor }}</td>
+						<td>{{ plane.year }}</td>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Model</th>
-                <th>Constructor</th>
-                <th>Year</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for plane in planes %}
-            <tr>
-                <td>{{ plane.id }}</td>
-                <td>{{ plane.model }}</td>
-                <td>{{ plane.constructor }}</td>
-                <td>{{ plane.year }}</td>
-                <td>
-                    <a href="{{ path('app_plane_show', {'id': plane.id}) }}">show</a>
-                    <a href="{{ path('app_plane_edit', {'id': plane.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+						<td>
+							<a href="{{ path('app_plane_show', {'id': plane.id}) }}">show</a>
+							<a href="{{ path('app_plane_edit', {'id': plane.id}) }}">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="5">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
 
-    <a href="{{ path('app_plane_new') }}">Create new</a>
+	<a class="btn d-flex justify-content-center" href="{{ path('app_plane_new') }}">Create new</a>
 {% endblock %}

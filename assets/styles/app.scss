@@ -1,5 +1,83 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: lightgray;
+    background-color: rgb(231, 96, 18);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 75%;
+
+}
+
+.btn {
+    width: 200px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+.btnFoot {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 50px;
+}
+
+.footer {
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    color: red($color: #000000);
+    background-color: black;
+}
+
+.navlink {
+    font-size: 150%;
+    margin-left: -250px;
+}
+
+.logoImageNav {
+    width: 240px;
+    height: 170px;
+
+}
+
+.logoImageFoot {
+    width: 230px;
+    height: 180px;
+}
+
+.homePageImgage {
+    width: 100%;
+    height: 100%;
+}
+
+.homePage {
+    width: 100%;
+    height: 100%;
+}
+
+.PlaneImage {
+    width: 1000px;
+    height: 300px;
+}
+
+.PlaneImageCatIndex {
+    width: 100vw;
+    height: 500px;
+}
+
+.imagePageList {
+    width: 100vw;
+    height: 600px;
 }
