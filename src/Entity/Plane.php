@@ -28,9 +28,6 @@ class Plane
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
 
-    #[ORM\OneToMany(mappedBy: 'plane', targetEntity: Informations::class, orphanRemoval: true)]
-    private Collection $Information;
-
     public function __construct()
     {
         $this->Information = new ArrayCollection();
