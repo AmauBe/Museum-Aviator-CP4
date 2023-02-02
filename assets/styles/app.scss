@@ -21,6 +21,8 @@ table {
     justify-content: center;
     align-items: center;
     font-size: large;
+    background-color: black;
+    color: white;
 }
 
 .btnFoot {
@@ -80,4 +82,9 @@ table {
 .imagePageList {
     width: 100vw;
     height: 600px;
+}
+
+.cleModif {
+    width: 30px;
+    height: 30px;
 }

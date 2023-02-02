@@ -11,23 +11,25 @@
 	<div class="container col-12 mt-5 py-1 colspan-4">
 		<table class="table mt-5 decoration-none">
 			<tbody>
-				{% for category in categories %}
-					<tr>
-						<td class="d-flex justify-content-center" colspan="2">{{ category.name }}</td>
-						<td colspan="1">
-							<a href="{{ path('app_category_show', {'id': category.id}) }}">show</a>
-							<a href="{{ path('app_category_edit', {'id': category.id}) }}">edit</a>
-						</td>
-					</tr>
-				{% else %}
-					<tr>
-						<td colspan="2">no records found</td>
-					</tr>
-				{% endfor %}
+				<div>
+					{% for category in categories %}
+						<tr>
+							<td class="d-flex justify-content-center text-decoration-none" colspan="2">{{ category.name }}</td>
+							<td class="text-decoration-none">
+								<a href="{{ path('app_category_show', {'id': category.id}) }}"><img class="cleModif" src="{{ asset('build/images/plane.png') }}" alt=""/></a>
+								<a href="{{ path('app_category_edit', {'id': category.id}) }}"><img class="cleModif" src="{{ asset('build/images/clé.png') }}" alt=""/></a>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="2">no records found</td>
+						</tr>
+					{% endfor %}
+				</div>
 			</tbody>
 		</table>
 	</div>
-	<div>
-		<a class="btn" href="{{ path('app_category_new') }}">Create new</a>
+	<div class="d-flex justify-content-center">
+		<a class="btn bg-dark text-white mb-3" href="{{ path('app_category_new') }}">Create new</a>
 	</div>
 {% endblock %}
