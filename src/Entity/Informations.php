@@ -44,6 +44,9 @@ class Informations
     #[ORM\JoinColumn(nullable: false)]
     private ?Plane $plane = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $model = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -165,6 +168,18 @@ class Informations
     public function setPlane(?Plane $plane): self
     {
         $this->plane = $plane;
+
+        return $this;
+    }
+
+    public function getModel(): ?string
+    {
+        return $this->model;
+    }
+
+    public function setModel(string $model): self
+    {
+        $this->model = $model;
 
         return $this;
     }

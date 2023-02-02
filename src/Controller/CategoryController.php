@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Category;
 use App\Form\Category1Type;
 use App\Repository\CategoryRepository;
+use App\Repository\PlaneRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -43,9 +44,11 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_category_show', methods: ['GET'])]
-    public function show(Category $category, CategoryRepository $categoryRepository, PlaneRepository $PlaneRepository): Response
+    public function show(string $categoryName, CategoryRepository $categoryRepository, PlaneRepository $PlaneRepository): Response
     {
         $category = $categoryRepository->findOneBy(['name' => $categoryName]);
+
+        $planes = $planeRepository->findPlanesByCategory(['categoryName' => $categoryName]);
 
         if (!$category) {
             throw $this->createNotFoundException(

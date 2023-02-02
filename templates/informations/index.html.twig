@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Informations index{% endblock %}
+
+{% block body %}
+    <h1>Informations index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Length</th>
+                <th>Height</th>
+                <th>SpeedMax</th>
+                <th>PassagerCapacity</th>
+                <th>DistanceCapacity</th>
+                <th>FuelCapacity</th>
+                <th>CockpitImage</th>
+                <th>PresentImage</th>
+                <th>Model</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for information in informations %}
+            <tr>
+                <td>{{ information.id }}</td>
+                <td>{{ information.name }}</td>
+                <td>{{ information.length }}</td>
+                <td>{{ information.height }}</td>
+                <td>{{ information.speedMax }}</td>
+                <td>{{ information.passagerCapacity }}</td>
+                <td>{{ information.distanceCapacity }}</td>
+                <td>{{ information.fuelCapacity }}</td>
+                <td>{{ information.cockpitImage }}</td>
+                <td>{{ information.presentImage }}</td>
+                <td>{{ information.model }}</td>
+                <td>
+                    <a href="{{ path('app_informations_show', {'id': information.id}) }}">show</a>
+                    <a href="{{ path('app_informations_edit', {'id': information.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_informations_new') }}">Create new</a>
+{% endblock %}

@@ -1,6 +1,8 @@
-{{ form_start(form, {'attr': {'class': 'd-flex flex-column'}}) }}
-{{ form_widget(form) }}
-
-<button class="btn bg-dark text-white">{{ button_label|default('Save') }}</button>
-
-{{form_end(form)}}
+<div class="d-flex justify-content-center">
+	{{ form_start(form) }}
+	{{ form_widget(form)}}
+	<div class="d-flex justify-content-center mt-3">
+		<button class="btn bg-dark text-white">{{ button_label|default('Save') }}</button>
+	</div>
+	{{form_end(form)}}
+</div>
