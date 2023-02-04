@@ -16,6 +16,7 @@
 					<th>Modele</th>
 					<th>Constructeur</th>
 					<th>Année</th>
+					<th>Category</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -24,6 +25,7 @@
 						<td>{{ plane.model }}</td>
 						<td>{{ plane.constructor }}</td>
 						<td>{{ plane.year }}</td>
+						<td>{{ plane.category.name }}</td>
 						<td>
 							<div class="d-flex justify-content-start">
 								<a href="{{ path('app_plane_show', {'id': plane.id}) }}"><img class="cleModif" src="{{ asset('build/images/plane.png') }}" alt=""/></a>
