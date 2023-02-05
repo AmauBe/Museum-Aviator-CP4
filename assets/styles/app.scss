@@ -23,6 +23,11 @@ button {
     margin-right: 20px;
 }
 
+.paragraphe {
+    width: 50vw;
+    background-color: red;
+}
+
 .h1Edit {
     margin-bottom: 50px;
 }
@@ -118,4 +123,19 @@ button {
 .btnDelete {
     display: flex;
     align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+
+#d1 {
+    background-color: black;
+    width: 5%;
+    color: white;
+}
+
+#p1 {
+    width: 40%;
 }
