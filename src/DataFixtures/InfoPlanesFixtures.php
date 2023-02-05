@@ -8,7 +8,9 @@ use Doctrine\Persistence\ObjectManager;
 
 class InformationFixtures extends Fixture 
 {
-const INFORMATIONS = [
+    public function load(ObjectManager $manager): void
+{ 
+ $INFORMATIONS = [
 [
 'model'=> 'Airbus A380-800',
 'length' => '73 m', 
@@ -58,8 +60,7 @@ const INFORMATIONS = [
 'pictures' => 'https://static.latribune.fr/1738585/rafale-grece-dassault-aviation.jpg'
 ]
 ];
-public function load(ObjectManager $manager): void
-{ 
+
 foreach (self::INFOPLANES as $key => $infoPlane){
 $newInfoPlanes = new InfoPlanes();
 $newInfoPlanes->setName($info['model']);

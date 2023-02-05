@@ -14,3 +14,8 @@ import './styles/app.scss';
 
 import './bootstrap';
 
+let texte = document.getElementById("paragraphe");
+let d1 = document.getElementById("d1");
+d1.addEventListener("mouseover", () => { p1.style.display = "block"; });
+d1.addEventListener("mouseout", () => { p1.style.display = "none"; });
+
